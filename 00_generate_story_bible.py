@@ -65,10 +65,10 @@ def gemini_json(prompt: str, max_tokens: int = 8192):
                 system_instruction=SYSTEM,
             )
             try:
-                response = client.models.generate_content(model="gemini-2.5-flash", contents=prompt, config=cfg)
+                response = client.models.generate_content(model="gemini-3.8-flash", contents=prompt, config=cfg)
             except TypeError:
                 response = client.models.generate_content(
-                    model="gemini-2.5-flash", contents=prompt, generation_config=cfg
+                    model="gemini-3.8-flash", contents=prompt, generation_config=cfg
                 )
             text = getattr(response, "text", None) or ""
             if not text:
@@ -220,7 +220,7 @@ def generate(is_test: bool, fresh: bool) -> Dict:
         bible = storyboard.load_bible()
     else:
         idea = config.STORY_PATH.read_text(encoding="utf-8")
-        LOGGER.info("Asking gemini-2.5-flash for the trilogy outline")
+        LOGGER.info("Asking gemini-3.8-flash for the trilogy outline")
         bible = unwrap_overview(gemini_json(overview_prompt(spec, idea), max_tokens=8192))
         storyboard.ensure_outline(bible, is_test)
         storyboard.save_bible(bible)
