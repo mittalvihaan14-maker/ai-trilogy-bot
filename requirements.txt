@@ -1,0 +1,18 @@
+# Full trilogy runtime. Python 3.10+ (Kaggle notebooks qualify).
+# On Kaggle, PyTorch with CUDA is already installed. Prefer requirements-kaggle.txt
+# there so pip does not replace the GPU build of torch.
+
+torch>=2.1
+diffusers>=0.30.0
+transformers>=4.44.0
+accelerate>=0.33.0
+safetensors>=0.4.3
+peft>=0.12.0
+huggingface_hub>=0.25.0
+google-genai>=1.0.0
+edge-tts>=6.1.12
+Pillow>=10.4.0
+numpy>=1.26.0
+python-dotenv>=1.0.1
+tqdm>=4.66.0
+imageio-ffmpeg>=0.5.1

@@ -1,0 +1,25 @@
+# Secrets
+.env
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# All generated media and checkpoints. GitHub rejects files over 100MB,
+# and this folder holds 4K video, audio, and model weight downloads.
+output/
+
+# Extra safety if a heavy file is written outside output/
+*.mp4
+*.wav
+*.mp3
+*.pth
+*.safetensors
+*.ckpt
+*.bin
+
+# Local environments and editor files
+.venv/
+venv/
+.DS_Store
+.ipynb_checkpoints/
